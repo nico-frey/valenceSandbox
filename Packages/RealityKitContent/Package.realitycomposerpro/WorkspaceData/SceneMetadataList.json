@@ -65,15 +65,6 @@
     "objectMetadataList" : [
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
-        "root",
-        "_materials"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8A3072F4-41CB-4736-A3DD-D242BB50C575",
         "root"
       ],
       {
@@ -83,7 +74,103 @@
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
         "root",
+        "Icosphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8A3072F4-41CB-4736-A3DD-D242BB50C575",
+        "root",
         "Roundcube"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8A3072F4-41CB-4736-A3DD-D242BB50C575",
+        "root",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "DB47D51E-65F9-40DC-9231-E9292E90E532" : {
+    "objectMetadataList" : [
+      [
+        "DB47D51E-65F9-40DC-9231-E9292E90E532",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DB47D51E-65F9-40DC-9231-E9292E90E532",
+        "root",
+        "Icosphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DB47D51E-65F9-40DC-9231-E9292E90E532",
+        "root",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DB47D51E-65F9-40DC-9231-E9292E90E532",
+        "root",
+        "Roundcube"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636" : {
+    "objectMetadataList" : [
+      [
+        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
+        "root",
+        "Icosphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
+        "root",
+        "Roundcube"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
+        "root",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
+        "root"
       ],
       {
         "isExpanded" : true,

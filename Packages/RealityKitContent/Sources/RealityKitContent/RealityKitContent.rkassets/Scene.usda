@@ -1,16 +1,51 @@
 #usda 1.0
 (
-    defaultPrim = "test"
+    defaultPrim = "oxygen"
     metersPerUnit = 1
     upAxis = "Y"
 )
 
-def "test" (
+def "oxygen" (
     active = true
-    prepend references = @test.usdc@
+    references = @oxygen.usdc@
 )
 {
     float3 xformOp:scale = (1, 1, 1)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def Material "Material"
+    {
+        token outputs:mtlx:surface.connect = </oxygen/Material/PreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (335.25, 100.5)
+
+        def Shader "PreviewSurface"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (93.5, 100.5)
+        }
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+}
+
+def "hydrogen" (
+    active = true
+    references = @hydrogen.usdc@
+)
+{
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
 }
 
