@@ -1,0 +1,282 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.8.1)"
+    }
+    defaultPrim = "ui_anchor"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "ui_anchor" (
+    active = true
+)
+{
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0.000004351139, 1.1907928, -2.66185)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+}
+
+def "hydrogen" (
+    active = true
+    references = @hydrogen.usdc@
+)
+{
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (-0.82636, 1.1907835, -2.661855)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+
+    def RealityKitComponent "HierarchicalFade"
+    {
+        uniform token info:id = "RealityKit.HierarchicalFade"
+    }
+}
+
+def "oxygen" (
+    active = true
+    references = @oxygen.usdc@
+)
+{
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (-0.58253527, 1.1907835, -2.661854)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+        token type = "hydrogen"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+
+    def RealityKitComponent "HierarchicalFade"
+    {
+        uniform token info:id = "RealityKit.HierarchicalFade"
+    }
+}
+
+def "oxygen_1" (
+    active = true
+    references = @oxygen.usdc@
+)
+{
+    float2 ui:nodegraph:node:pos = (20, 20)
+    int ui:nodegraph:node:stackingOrder = 1
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (-0.29104155, 1.1907835, -2.6618562)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+        token type = "carbon"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+}
+
+def "oxygen_2" (
+    active = true
+    references = @oxygen.usdc@
+)
+{
+    float2 ui:nodegraph:node:pos = (40, 40)
+    int ui:nodegraph:node:stackingOrder = 2
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (-0.025251422, 1.1907835, -2.6618557)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+        token type = "nitrogen"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+}
+
+def "oxygen_3" (
+    active = true
+    references = @oxygen.usdc@
+)
+{
+    float2 ui:nodegraph:node:pos = (60, 60)
+    int ui:nodegraph:node:stackingOrder = 3
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (0.31119144, 1.1907835, -2.6618576)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+}
+
+def "oxygen_4" (
+    active = true
+    references = @oxygen.usdc@
+)
+{
+    float2 ui:nodegraph:node:pos = (80, 80)
+    int ui:nodegraph:node:stackingOrder = 4
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.09999999, 0.09999999, 0.09999999)
+    float3 xformOp:translate = (0.59336597, 1.1907835, -2.661856)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+        token type = "carbon"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.9591417, 1.8841512, 1.8784854)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.0022805333, 0)
+            }
+        }
+    }
+}
+

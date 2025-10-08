@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import RealityKit
+import RealityKitContent
 
 @main
 struct valenceSandboxApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    
+    init() {
+        AtomComponent.registerComponent()
+    }
+    
+    var body: some SwiftUI.Scene {
+        ImmersiveSpace {
+            PlaygroundView()
         }
     }
 }

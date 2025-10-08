@@ -1,29 +1,63 @@
 #usda 1.0
 (
-    defaultPrim = "oxygen"
+    defaultPrim = "Cone"
     metersPerUnit = 1
     upAxis = "Y"
 )
 
-def "oxygen" (
-    active = true
-    references = @oxygen.usdc@
+def Xform "Transform" (
+    active = false
 )
 {
-    float3 xformOp:scale = (1, 1, 1)
+    reorder nameChildren = ["oxygen", "hydrogen"]
+    quatf xformOp:orient = (0.99999994, 0, 0, 0)
+    float3 xformOp:scale = (0.19999997, 0.19999997, 0.19999997)
+    float3 xformOp:translate = (0, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-    def Material "Material"
+    def "oxygen" (
+        active = true
+        references = @oxygen.usdc@
+    )
     {
-        token outputs:mtlx:surface.connect = </oxygen/Material/PreviewSurface.outputs:out>
-        token outputs:realitykit:vertex
-        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (335.25, 100.5)
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1.0000001, 1.0000001, 1.0000001)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-        def Shader "PreviewSurface"
+        def Material "Material"
         {
-            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
-            token outputs:out
-            float2 ui:nodegraph:node:pos = (93.5, 100.5)
+            token outputs:mtlx:surface.connect = </Transform/oxygen/Material/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (335.25, 100.5)
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (93.5, 100.5)
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+    }
+
+    def "hydrogen" (
+        active = true
+        references = @hydrogen.usdc@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1.0000001, 1.0000001, 1.0000001)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
         }
     }
 
@@ -31,21 +65,86 @@ def "oxygen" (
     {
         uniform token info:id = "RealityKit.InputTarget"
     }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (1.959142, 1.8841515, 1.8784857)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+                float3 position = (0.008439094, 0.002280563, 0)
+            }
+        }
+    }
+
+    def RealityKitComponent "HierarchicalFade"
+    {
+        uniform token info:id = "RealityKit.HierarchicalFade"
+    }
 }
 
-def "hydrogen" (
+def Cone "Cone" (
     active = true
-    references = @hydrogen.usdc@
+    prepend apiSchemas = ["MaterialBindingAPI"]
 )
 {
+    uniform token axis = "Y"
+    double height = 0.2
+    rel material:binding = </Cone/DefaultMaterial>
+    double radius = 0.1
     quatf xformOp:orient = (1, 0, 0, 0)
     float3 xformOp:scale = (1, 1, 1)
     float3 xformOp:translate = (0, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
+    def Material "DefaultMaterial"
+    {
+        prepend token outputs:surface.connect = </Cone/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+        def Shader "DefaultSurfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            float inputs:roughness = 0.75
+            token outputs:surface
+        }
+    }
+
+    def RealityKitComponent "Collider"
+    {
+        uint group = 1
+        uniform token info:id = "RealityKit.Collider"
+        uint mask = 4294967295
+        token type = "Default"
+
+        def RealityKitStruct "Shape"
+        {
+            float3 extent = (0.2, 0.2, 0.2)
+            token shapeType = "Box"
+
+            def RealityKitStruct "pose"
+            {
+            }
+        }
+    }
+
     def RealityKitComponent "InputTarget"
     {
         uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def RealityKitCustomComponent "RealityKitContent_AtomComponent"
+    {
+        uniform token info:id = "RealityKitContent.AtomComponent"
+        token type = "beryllium"
     }
 }
 
