@@ -47,7 +47,7 @@ struct PlaygroundView: View {
                     uiAnchor.components.set(viewAttachmentComponent)
                 }
                 
-                oxygenEntity = playgroundEntity.findEntity(named: "hydrogen")
+                oxygenEntity = playgroundEntity.findEntity(named: "oxygen")
 
                 for child in playgroundEntity.children {
                     if let atomComponent = child.components[AtomComponent.self] {
@@ -57,33 +57,9 @@ struct PlaygroundView: View {
                         manipulationComponent.releaseBehavior = .stay
                         child.components.set(manipulationComponent)
                         
-//                        let gestureComponent = GestureComponent(TapGesture().onEnded({ event in
-//                            print("Tapped")
-//                        }))
-//                        child.components.set(gestureComponent)
-                        
-                        
-//                        let entity = Entity()
-//                        let attachment = ViewAttachmentComponent(rootView: PieceLabel(title: atomComponent.type.title, taxonomy: atomComponent.type.taxonomy, description: atomComponent.type.description))
-//                        
-//                        print(atomComponent.type)
-//                        child.components.set(attachment)
-//                        
-//                        entity.transform = child.transform
-//                        entity.transform.translation.y += 0.5
-//
-//                        child.addChild(entity)
-                        
-//                        _ = content.subscribe(to: ManipulationEvents.WillBegin.self, on: child, { event in
-//                            playgroundEntity.addChild(event.entity.clone(recursive: true))
-//                        })
-                        
-
                     }
                 }
                 
-//                playgroundEntity.addChild(firstValidCompound)
-
                 firstCollision = content.subscribe(to: CollisionEvents.Began.self, { event in
                     print("1 ", event.entityA.name, event.entityB.name)
                                         
@@ -102,11 +78,6 @@ struct PlaygroundView: View {
                     }
                     
                 })
-
-//                _ = content.subscribe(to: CollisionEvents.Began.self, on: firstValidCompound, { event in
-//                    print(firstValidCompound?.name)
-//                    print("2 ", event.entityA.name, event.entityB.name)
-//                })
                 
                 content.add(playgroundEntity)
             }
