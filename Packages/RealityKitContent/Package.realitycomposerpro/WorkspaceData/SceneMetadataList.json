@@ -9,7 +9,7 @@
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
         "Root",
-        "GridMaterial"
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -26,7 +26,7 @@
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
         "Root",
-        "Sphere"
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -81,7 +81,8 @@
       },
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
-        "root"
+        "root",
+        "_materials"
       ],
       {
         "isExpanded" : true,
@@ -89,8 +90,7 @@
       },
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
-        "root",
-        "_materials"
+        "root"
       ],
       {
         "isExpanded" : true,
@@ -109,11 +109,32 @@
   },
   "923AAA0B-0A2F-4CA3-90F3-C48A3C83DB68" : {
     "objectMetadataList" : [
+      [
+        "923AAA0B-0A2F-4CA3-90F3-C48A3C83DB68",
+        "oxygen_1"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "C2F97183-0245-49C0-8546-BFABAB9D7979" : {
+    "objectMetadataList" : [
 
     ]
   },
   "DB47D51E-65F9-40DC-9231-E9292E90E532" : {
     "objectMetadataList" : [
+      [
+        "DB47D51E-65F9-40DC-9231-E9292E90E532",
+        "root",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
       [
         "DB47D51E-65F9-40DC-9231-E9292E90E532",
         "root",
@@ -126,15 +147,6 @@
       [
         "DB47D51E-65F9-40DC-9231-E9292E90E532",
         "root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "DB47D51E-65F9-40DC-9231-E9292E90E532",
-        "root",
-        "Material"
       ],
       {
         "isExpanded" : true,
@@ -155,15 +167,6 @@
     "objectMetadataList" : [
       [
         "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
-        "root",
-        "Material"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
         "root"
       ],
       {
@@ -173,16 +176,7 @@
       [
         "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
         "root",
-        "Icosphere"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
-        "root",
-        "Roundcube"
+        "Material"
       ],
       {
         "isExpanded" : true,

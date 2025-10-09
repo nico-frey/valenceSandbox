@@ -16,7 +16,7 @@ struct PlaygroundView: View {
 
     fileprivate func handleSuccess(_ event: CollisionEvents.Began, in playgroundEntity: Entity) {
         firstCollision = nil
-        firstValidCompound = try? Entity.load(named: "Scene", in: realityKitContentBundle)
+        firstValidCompound = try? Entity.load(named: "compound_ho", in: realityKitContentBundle)
         
         if let firstValidCompound, let oxygenEntity {
             playgroundEntity.addChild(firstValidCompound)
@@ -56,6 +56,12 @@ struct PlaygroundView: View {
                         var manipulationComponent = ManipulationComponent()
                         manipulationComponent.releaseBehavior = .stay
                         child.components.set(manipulationComponent)
+                        
+//                        let gestureComponent = GestureComponent(TapGesture().onEnded({ event in
+//                            print("Tapped")
+//                        }))
+//                        child.components.set(gestureComponent)
+                        
                         
 //                        let entity = Entity()
 //                        let attachment = ViewAttachmentComponent(rootView: PieceLabel(title: atomComponent.type.title, taxonomy: atomComponent.type.taxonomy, description: atomComponent.type.description))

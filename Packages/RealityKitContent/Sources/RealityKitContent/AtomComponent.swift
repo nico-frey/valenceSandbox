@@ -11,16 +11,15 @@ public struct AtomComponent: Component, Codable {
 }
 
 public enum AtomType: String, Codable {
-    case oxygen
     case hydrogen
     case beryllium
     case carbon
     case nitrogen
+    case oxygen
+    case flourine
     
     public var title: String {
         switch self {
-        case .oxygen:
-            return "Oxygen"
         case .hydrogen:
             return "Hydrogen"
         case .beryllium:
@@ -29,36 +28,44 @@ public enum AtomType: String, Codable {
             return "Carbon"
         case .nitrogen:
             return "Nitrogen"
+        case .oxygen:
+            return "Oxygen"
+        case .flourine:
+            return "Flourine"
         }
     }
     
     public var description: String {
         switch self {
-        case .oxygen:
-            return "Oxygen"
         case .hydrogen:
-            return "Hydrogen"
+            return "Hydrogen is the lightest and most abundant element in the universe."
         case .beryllium:
-            return "Beryllium"
+            return "Beryllium is a lightweight, strong alkaline earth metal."
         case .carbon:
-            return "Carbon"
+            return "Carbon is a versatile nonmetal essential to all known life."
         case .nitrogen:
-            return "Nitrogen"
+            return "Nitrogen makes up about 78% of Earth's atmosphere."
+        case .oxygen:
+            return "Oxygen is essential for respiration in most living organisms."
+        case .flourine:
+            return "Flourine is a highly reactive halogen and the most electronegative element."
         }
     }
 
-    public var taxonomy: String {
+    public var symbol: String {
         switch self {
-        case .oxygen:
-            return "Oxygen"
         case .hydrogen:
-            return "Hydrogen"
+            return "H"
         case .beryllium:
-            return "Beryllium"
+            return "Be"
         case .carbon:
-            return "Carbon"
+            return "C"
         case .nitrogen:
-            return "Nitrogen"
+            return "N"
+        case .oxygen:
+            return "O"
+        case .flourine:
+            return "F"
         }
     }
 
