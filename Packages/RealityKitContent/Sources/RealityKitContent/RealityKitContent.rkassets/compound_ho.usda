@@ -146,5 +146,10 @@ def Cone "Cone" (
         uniform token info:id = "RealityKitContent.AtomComponent"
         token type = "beryllium"
     }
+
+    def RealityKitComponent "HierarchicalFade"
+    {
+        uniform token info:id = "RealityKit.HierarchicalFade"
+    }
 }
 

@@ -8,7 +8,13 @@
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/GridMaterial.usda" : "FBD8436F-6B8B-4B82-99B5-995D538B4704",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Playground.usda" : "C2F97183-0245-49C0-8546-BFABAB9D7979",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/beryllium.usdc" : "E3D047F5-B1A5-4582-BD56-693AB21EB3CB",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/carbon.usdc" : "AD0E44CF-FCEC-467B-A3A7-6905A87ADE13",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/compound_co.usda" : "86CF1B8B-4ADA-4E9E-AD58-06335E937D81",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/compound_ho.usda" : "3E044BAC-9F68-4B29-9F5E-79CE29A4BBB3",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/flourine.usdc" : "5C1DE8A3-DCC5-4AB9-AC44-8F3F40009E4D",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/hydrogen.usdc" : "DB47D51E-65F9-40DC-9231-E9292E90E532",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/molecule_h2o.usda" : "E91F422E-A905-41D3-9F7A-BE0FD3EFFA9A",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/oxygen.usdc" : "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/procedural_sphere_grid.usda" : "1CBF3893-ABFD-408C-8B91-045BFD257808",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/test.usdc" : "8A3072F4-41CB-4736-A3DD-D242BB50C575"
@@ -16,10 +22,16 @@
   "projectID" : 4998092345846032307,
   "uuidToIntID" : {
     "26DBAE76-5DD8-47B6-A085-1B4ADA111097" : 78934444949961215,
+    "3E044BAC-9F68-4B29-9F5E-79CE29A4BBB3" : -3717454636458566377,
+    "5C1DE8A3-DCC5-4AB9-AC44-8F3F40009E4D" : 5652009826831968828,
+    "86CF1B8B-4ADA-4E9E-AD58-06335E937D81" : 7291818754374822047,
     "8A3072F4-41CB-4736-A3DD-D242BB50C575" : -2228830696733405188,
     "923AAA0B-0A2F-4CA3-90F3-C48A3C83DB68" : 4473708480849384149,
+    "AD0E44CF-FCEC-467B-A3A7-6905A87ADE13" : 6887886065619836260,
     "C2F97183-0245-49C0-8546-BFABAB9D7979" : 7314105223578325618,
     "DB47D51E-65F9-40DC-9231-E9292E90E532" : 8895274735051261113,
-    "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636" : -4359384048579150883
+    "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636" : -4359384048579150883,
+    "E3D047F5-B1A5-4582-BD56-693AB21EB3CB" : 952463810944078565,
+    "E91F422E-A905-41D3-9F7A-BE0FD3EFFA9A" : -7159646848407234380
   }
 }
