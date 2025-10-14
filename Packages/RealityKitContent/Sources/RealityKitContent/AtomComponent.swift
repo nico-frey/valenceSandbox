@@ -5,6 +5,7 @@ import RealityKit
 public struct AtomComponent: Component, Codable {
     // This is an example of adding a variable to the component.
     public var type: AtomType = .oxygen
+    public var placed: Bool = false
 
     public init() {
     }

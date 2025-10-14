@@ -116,23 +116,29 @@ struct PlaygroundView: View {
                     // Only act if this drag began on a toolbar atom (or any of its children)
                     guard let root = atomRoot(for: event.entity),
                           paletteNames.contains(root.name),
-                          let parent = root.parent else { return }
+                          event.entity.components[AtomComponent.self]?.placed == false, // do not duplicate an already placed entity anymore
+                          let replacement = try? Entity.load(named: root.name, in: realityKitContentBundle) else {
+                        return
+                    }
+                    replacement.name = root.name
 
-                    // Leave a replacement behind on the toolbar (slightly lifted so it’s visible and doesn’t collide)
-                    let replacement = root.clone(recursive: true)
-                    if replacement.components[InputTargetComponent.self] == nil {
-                        replacement.components.set(InputTargetComponent())
+                    replacement.components.set(InputTargetComponent())
+                    if let collisionComponent = event.entity.components[CollisionComponent.self] {
+                        replacement.components.set(collisionComponent)
                     }
-                    if replacement.components[CollisionComponent.self] == nil {
-                        replacement.generateCollisionShapes(recursive: true)
-                    }
-                    var manip = replacement.components[ManipulationComponent.self] ?? ManipulationComponent()
-                    manip.releaseBehavior = .stay
-                    replacement.components.set(manip)
+                    replacement.components.set(event.entity.components[AtomComponent.self] ?? AtomComponent())
+                    
+                    var manipulationComponent = ManipulationComponent()
+                    manipulationComponent.releaseBehavior = .stay
+                    replacement.components.set(manipulationComponent)
+
 
                     replacement.transform = root.transform
-                    replacement.position.y += 0.04 // nudge up to avoid instant overlap/collision spam
-                    parent.addChild(replacement)
+                    root.parent?.addChild(replacement)
+
+                    // After copying the original atom component to the duplicated entity,
+                    //mark the initially manipulated atom component's entity as placed to prevent it from duplicating
+                    event.entity.components[AtomComponent.self]?.placed = true
 
                     // Note: the user keeps dragging the original (which just left the toolbar),
                     // and the replacement stays as the next “palette” copy.
