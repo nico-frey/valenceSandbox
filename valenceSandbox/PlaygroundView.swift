@@ -14,6 +14,11 @@ struct PlaygroundView: View {
     @State private var firstValidCompound: Entity?
     @State private var oxygenEntity: Entity?
     @State private var isResolving: Bool = false
+    @State private var spawnSub: EventSubscription?     // duplication-on-drag
+
+    // Names of the "toolbar" atoms that should always duplicate on drag.
+    // Include both spellings for safety since the RC scene currently uses "flourine".
+    private let paletteNames: Set<String> = ["hydrogen", "oxygen", "carbon", "nitrogen", "fluorine", "flourine", "beryllium"]
 
     // Helper to recursively remove InputTargetComponent from all descendants
     private func removeInputTargetsRecursively(from entity: Entity) {
@@ -25,7 +30,7 @@ struct PlaygroundView: View {
         }
     }
 
-    // NEW: Walk up parents to see if an entity is inside a prefab with this root name.
+    // Walk up parents to see if an entity is inside a prefab with this root name.
     private func isDescendant(_ entity: Entity, ofNamed target: String) -> Bool {
         var current: Entity? = entity
         while let e = current {
@@ -35,8 +40,17 @@ struct PlaygroundView: View {
         return false
     }
 
+    // Find the nearest ancestor (including self) that is an atom root (has AtomComponent).
+    private func atomRoot(for entity: Entity) -> Entity? {
+        var current: Entity? = entity
+        while let e = current {
+            if e.components[AtomComponent.self] != nil { return e }
+            current = e.parent
+        }
+        return nil
+    }
+
     fileprivate func handleSuccess(_ event: CollisionEvents.Began, compoundName: String, in playgroundEntity: Entity) {
-        // Load the requested compound prefab and place it between the two colliding atoms.
         firstCollision = nil
         firstValidCompound = try? Entity.load(named: compoundName, in: realityKitContentBundle)
         
@@ -48,13 +62,11 @@ struct PlaygroundView: View {
             if firstValidCompound.components[InputTargetComponent.self] == nil {
                 firstValidCompound.components.set(InputTargetComponent())
             }
-            // Make sure it can be hit-tested for gestures.
             if firstValidCompound.components[CollisionComponent.self] == nil {
                 firstValidCompound.generateCollisionShapes(recursive: true)
             }
-            // Remove InputTarget from all descendants to avoid dragging a subpart.
             removeInputTargetsRecursively(from: firstValidCompound)
-            // Install manipulation on the root so the whole thing moves.
+
             var manipulationComponent = ManipulationComponent()
             manipulationComponent.releaseBehavior = .stay
             firstValidCompound.components.set(manipulationComponent)
@@ -84,12 +96,12 @@ struct PlaygroundView: View {
             if let playgroundEntity = try? await Entity(named: "Playground", in: realityKitContentBundle) {
                 let viewAttachmentComponent = ViewAttachmentComponent(rootView: ToolbarView())
                 if let uiAnchor = playgroundEntity.findEntity(named: "ui_anchor") {
-                    print(uiAnchor)
                     uiAnchor.components.set(viewAttachmentComponent)
                 }
                 
                 oxygenEntity = playgroundEntity.findEntity(named: "oxygen")
 
+                // Make atoms draggable (toolbar and spawned ones)
                 for child in playgroundEntity.children {
                     if let atomComponent = child.components[AtomComponent.self] {
                         print(atomComponent.type.title)
@@ -98,7 +110,35 @@ struct PlaygroundView: View {
                         child.components.set(manipulationComponent)
                     }
                 }
+
+                // Duplication-on-drag — only for toolbar atoms, visible, no collision spam
+                spawnSub = content.subscribe(to: ManipulationEvents.WillBegin.self) { event in
+                    // Only act if this drag began on a toolbar atom (or any of its children)
+                    guard let root = atomRoot(for: event.entity),
+                          paletteNames.contains(root.name),
+                          let parent = root.parent else { return }
+
+                    // Leave a replacement behind on the toolbar (slightly lifted so it’s visible and doesn’t collide)
+                    let replacement = root.clone(recursive: true)
+                    if replacement.components[InputTargetComponent.self] == nil {
+                        replacement.components.set(InputTargetComponent())
+                    }
+                    if replacement.components[CollisionComponent.self] == nil {
+                        replacement.generateCollisionShapes(recursive: true)
+                    }
+                    var manip = replacement.components[ManipulationComponent.self] ?? ManipulationComponent()
+                    manip.releaseBehavior = .stay
+                    replacement.components.set(manip)
+
+                    replacement.transform = root.transform
+                    replacement.position.y += 0.04 // nudge up to avoid instant overlap/collision spam
+                    parent.addChild(replacement)
+
+                    // Note: the user keeps dragging the original (which just left the toolbar),
+                    // and the replacement stays as the next “palette” copy.
+                }
                 
+                // Collisions → compounds/molecules
                 firstCollision = content.subscribe(to: CollisionEvents.Began.self, { event in
                     print("1 ", event.entityA.name, event.entityB.name)
                     if isResolving { return }
@@ -107,7 +147,7 @@ struct PlaygroundView: View {
                     let aType = event.entityA.components[AtomComponent.self]?.type
                     let bType = event.entityB.components[AtomComponent.self]?.type
                     
-                    // ✅ HO compound (or any of its children) + H atom → H2O molecule
+                    // HO compound (or any of its children) + H atom → H2O molecule
                     if (isDescendant(event.entityA, ofNamed: "compound_ho") && bType == .hydrogen) ||
                        (isDescendant(event.entityB, ofNamed: "compound_ho") && aType == .hydrogen) {
                         isResolving = true
@@ -129,7 +169,6 @@ struct PlaygroundView: View {
                             print("make final molecule from compound and atom")
                         } else {
                             print("incompatible, shake or move entity a away")
-                            // TODO: Handle more combination cases
                         }
                     }
                 })
