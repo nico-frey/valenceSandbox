@@ -8,7 +8,8 @@
     "objectMetadataList" : [
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root"
+        "Root",
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -16,8 +17,7 @@
       },
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root",
-        "Sphere"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -89,8 +89,7 @@
     "objectMetadataList" : [
       [
         "787F1524-CB82-421E-B7C9-630DDD67247D",
-        "root",
-        "Plane_007"
+        "root"
       ],
       {
         "isExpanded" : true,
@@ -98,7 +97,8 @@
       },
       [
         "787F1524-CB82-421E-B7C9-630DDD67247D",
-        "root"
+        "root",
+        "Plane_007"
       ],
       {
         "isExpanded" : true,
@@ -115,15 +115,6 @@
     "objectMetadataList" : [
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
-        "root",
-        "_materials"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8A3072F4-41CB-4736-A3DD-D242BB50C575",
         "root"
       ],
       {
@@ -133,7 +124,7 @@
       [
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
         "root",
-        "Roundcube"
+        "_materials"
       ],
       {
         "isExpanded" : true,
@@ -143,6 +134,15 @@
         "8A3072F4-41CB-4736-A3DD-D242BB50C575",
         "root",
         "Icosphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8A3072F4-41CB-4736-A3DD-D242BB50C575",
+        "root",
+        "Roundcube"
       ],
       {
         "isExpanded" : true,
@@ -220,7 +220,8 @@
     "objectMetadataList" : [
       [
         "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
-        "root"
+        "root",
+        "_materials"
       ],
       {
         "isExpanded" : true,
@@ -228,8 +229,7 @@
       },
       [
         "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
-        "root",
-        "_materials"
+        "root"
       ],
       {
         "isExpanded" : true,
@@ -260,8 +260,7 @@
     "objectMetadataList" : [
       [
         "E3D047F5-B1A5-4582-BD56-693AB21EB3CB",
-        "root",
-        "Roundcube"
+        "root"
       ],
       {
         "isExpanded" : true,
@@ -269,7 +268,8 @@
       },
       [
         "E3D047F5-B1A5-4582-BD56-693AB21EB3CB",
-        "root"
+        "root",
+        "Roundcube"
       ],
       {
         "isExpanded" : true,

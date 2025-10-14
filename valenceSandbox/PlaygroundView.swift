@@ -97,6 +97,7 @@ struct PlaygroundView: View {
                 let viewAttachmentComponent = ViewAttachmentComponent(rootView: ToolbarView())
                 if let uiAnchor = playgroundEntity.findEntity(named: "ui_anchor") {
                     uiAnchor.components.set(viewAttachmentComponent)
+                    uiAnchor.scale = .init(repeating: 3)
                 }
                 
                 oxygenEntity = playgroundEntity.findEntity(named: "oxygen")

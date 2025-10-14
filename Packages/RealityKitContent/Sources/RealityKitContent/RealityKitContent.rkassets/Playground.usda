@@ -16,7 +16,7 @@ def Xform "ui_anchor" (
 {
     quatf xformOp:orient = (1, 0, 0, 0)
     float3 xformOp:scale = (1, 1, 1)
-    float3 xformOp:translate = (0.000004351139, 1.1907928, -2.66185)
+    float3 xformOp:translate = (0.000004351139, 0.93743753, -2.66185)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 }
 
