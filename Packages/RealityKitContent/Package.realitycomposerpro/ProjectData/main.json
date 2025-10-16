@@ -5,7 +5,11 @@
     "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Untitled Scene.usda" : "03E02005-EFA6-48D6-8A76-05B2822A74E9",
     "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Untitled%20Scene.usda" : "923AAA0B-0A2F-4CA3-90F3-C48A3C83DB68",
     "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/procedural_sphere_grid.usda" : "34C460AE-CA1B-4348-BD05-621ACBDFFE97",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Carbon.usdc" : "4CF69A05-4D69-4F50-94DF-66F8A758797E",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/GridMaterial.usda" : "FBD8436F-6B8B-4B82-99B5-995D538B4704",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Hydrogen.usdc" : "FE18A4CD-F2DF-4F43-A5A8-B47F8824927D",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Materials\/Hydrogen.usdc" : "E26795B8-033D-476B-98FE-B3AA647AE66E",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Nitrogen.usdc" : "CD187371-FD05-4BF0-9531-F58B2413BF0B",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Playground.usda" : "C2F97183-0245-49C0-8546-BFABAB9D7979",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/beryllium.usdc" : "E3D047F5-B1A5-4582-BD56-693AB21EB3CB",
@@ -15,6 +19,7 @@
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/flourine.usdc" : "5C1DE8A3-DCC5-4AB9-AC44-8F3F40009E4D",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/hydrogen.usdc" : "DB47D51E-65F9-40DC-9231-E9292E90E532",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/molecule_h2o.usda" : "E91F422E-A905-41D3-9F7A-BE0FD3EFFA9A",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/nitrogen.usdc" : "184C1B40-3848-4026-93D3-B152B6D5D806",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/oxygen.usdc" : "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/oxygenTest.usdc" : "787F1524-CB82-421E-B7C9-630DDD67247D",
     "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/procedural_sphere_grid.usda" : "1CBF3893-ABFD-408C-8B91-045BFD257808",
@@ -22,8 +27,10 @@
   },
   "projectID" : 4998092345846032307,
   "uuidToIntID" : {
+    "184C1B40-3848-4026-93D3-B152B6D5D806" : -5020529670413298399,
     "26DBAE76-5DD8-47B6-A085-1B4ADA111097" : 78934444949961215,
     "3E044BAC-9F68-4B29-9F5E-79CE29A4BBB3" : -3717454636458566377,
+    "4CF69A05-4D69-4F50-94DF-66F8A758797E" : 7982874710255260410,
     "5C1DE8A3-DCC5-4AB9-AC44-8F3F40009E4D" : 5652009826831968828,
     "787F1524-CB82-421E-B7C9-630DDD67247D" : 9130665077668109350,
     "86CF1B8B-4ADA-4E9E-AD58-06335E937D81" : 7291818754374822047,
@@ -31,9 +38,12 @@
     "923AAA0B-0A2F-4CA3-90F3-C48A3C83DB68" : 4473708480849384149,
     "AD0E44CF-FCEC-467B-A3A7-6905A87ADE13" : 6887886065619836260,
     "C2F97183-0245-49C0-8546-BFABAB9D7979" : 7314105223578325618,
+    "CD187371-FD05-4BF0-9531-F58B2413BF0B" : -7662020066708469591,
     "DB47D51E-65F9-40DC-9231-E9292E90E532" : 8895274735051261113,
+    "E26795B8-033D-476B-98FE-B3AA647AE66E" : 6365211325893933105,
     "E272DB3D-49BE-4C8B-9C9D-1B8737A8E636" : -4359384048579150883,
     "E3D047F5-B1A5-4582-BD56-693AB21EB3CB" : 952463810944078565,
-    "E91F422E-A905-41D3-9F7A-BE0FD3EFFA9A" : -7159646848407234380
+    "E91F422E-A905-41D3-9F7A-BE0FD3EFFA9A" : -7159646848407234380,
+    "FE18A4CD-F2DF-4F43-A5A8-B47F8824927D" : 7856500760086585077
   }
 }
